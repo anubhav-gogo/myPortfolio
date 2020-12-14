@@ -12,7 +12,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: white;
+    background: set-text-color($primary-color);
     @include ease-out;
   }
 
@@ -86,10 +86,10 @@
     .potrait {
       width: 250px;
       height: 250px;
-      background: url(../img/classygogo.jpeg);
-      background-position: center;
+      background: url(../img/xoxo.jpg);
+      background-position: 100% 100%;
       border-radius: 50%;
-      border: solid 3px $primary-color;
+      border: solid 4px aqua;
     }
   }
 
@@ -114,12 +114,21 @@
     text-transform: uppercase;
     font-size: 30px;
     font-weight: 300;
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include ease-out;
 
     &:hover {
       color: $secondary-color;
+    }
+  }
+}
+
+//make h1 tag disappear on button click
+#home {
+  h1 {
+    .show {
+      display: none !important;
     }
   }
 }

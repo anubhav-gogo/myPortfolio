@@ -46,11 +46,25 @@
     .potrait {
       width: 150px;
       height: 150px;
+      background: url(../img/classygogosmall.jpg);
     }
   }
 
   .menu {
     opacity: 0.96;
+  }
+
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1";
+
+    grid-template-columns: 1fr;
+
+    .bio-image {
+      margin: auto;
+    }
   }
 }
 
@@ -67,6 +81,14 @@
   main {
     h1 {
       font-size: 5rem !important;
+    }
+  }
+
+  .about-info {
+    .bio-image {
+      margin: auto;
+      width: 320px;
+      height: 200px;
     }
   }
 }

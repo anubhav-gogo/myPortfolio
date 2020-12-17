@@ -1,7 +1,7 @@
 .menu-btn {
   position: absolute;
   top: 35px;
-  right: 35px;
+  right: 32px;
   z-index: 3;
   cursor: pointer;
   transition: all 1s ease-out; }
@@ -159,7 +159,7 @@ span.text-secondary {
 
 main {
   padding: 4rem;
-  min-height: calc(100vh-60px); }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons.show {
@@ -182,8 +182,7 @@ main {
   .about-info .bio-image {
     grid-area: bioimage;
     width: 450px;
-    height: 300px;
-    border: 2px solid white; }
+    height: 300px; }
   .about-info .bio {
     grid-area: bio; }
   .about-info .job-1 {
@@ -193,6 +192,7 @@ main {
   .about-info .job {
     background: #343434;
     padding: 0.5rem;
+    text-align: center;
     border-bottom: 5px solid #eece1a; }
 
 .projects {
@@ -227,9 +227,100 @@ main {
 #main-footer {
   text-align: center;
   padding: 1rem;
+  box-sizing: border-box;
   background: #181818;
   color: #fff;
   height: 60px; }
+
+.form {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  margin-top: 1rem; }
+
+.form input {
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+  background: #272727; }
+
+.form label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid rgba(252, 252, 252, 0.5); }
+
+.form label:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease; }
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease; }
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3; }
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  transform: translateX(0%); }
+
+#tarea {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #272727; }
+  #tarea::placeholder {
+    font-family: "Oswald";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5; }
+
+.form .sbutton {
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Oswald";
+  height: 50px; }
+  .form .sbutton:hover {
+    background: #eece1a;
+    cursor: pointer; }
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-gap: 200px;
+  grid-template-columns: repeat(2, 1fr); }
+
+.info {
+  width: 300px;
+  height: 250px;
+  padding: 1rem;
+  margin-top: 50px;
+  background: #414141;
+  text-align: center; }
 
 @media screen and (min-width: 1171px) {
   .projects {
@@ -245,8 +336,7 @@ main {
     text-align: center; }
     main .lg-heading {
       line-height: 1;
-      margin-bottom: 1.5rem;
-      font-size: 15px; }
+      margin-bottom: 1.5rem; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -265,7 +355,7 @@ main {
     .menu-branding .potrait {
       width: 150px;
       height: 150px;
-      background: url(../img/classygogosmall.jpg); }
+      background: url(../img/3.jpg); }
   .menu {
     opacity: 0.96; }
   .about-info {
@@ -274,7 +364,12 @@ main {
     .about-info .bio-image {
       margin: auto; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem; }
+    .wrapper .info {
+      margin: auto; } }
 
 @media screen and (max-width: 600px) {
   body {
